@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Source for /og-image.png (1200x630). Re-render with: ./design/render.sh -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Permanent+Marker&family=Special+Elite&family=VT323&family=Abril+Fatface&display=block" rel="stylesheet">
+<style>
+:root{--paper:#e4e2dc;--pink:#ff2e88;--yellow:#f4ff3a;--cyan:#2ee6ff}
+*{box-sizing:border-box}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:var(--paper);position:relative;font-family:"Courier Prime",monospace}
+body::before{content:"";position:absolute;inset:0;opacity:.18;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.bbs{position:absolute;top:0;left:0;right:0;font-family:"VT323",monospace;font-size:30px;line-height:1;
+  background:#000;color:var(--yellow);padding:14px 40px;display:flex;justify-content:space-between}
+.bbs span:last-child{color:var(--cyan)}
+.ransom{position:absolute;left:56px;top:118px;display:flex;flex-wrap:wrap;gap:22px 0;align-items:flex-end;font-size:132px;line-height:1;margin:0;width:1100px}
+.word{display:flex;gap:10px;margin-right:62px}
+.l{display:inline-block;padding:.06em .12em .02em;border:3px solid #000;box-shadow:5px 5px 0 #000}
+.f1{font-family:"Anton",sans-serif;background:#000;color:var(--yellow);transform:rotate(-4deg)}
+.f2{font-family:"Abril Fatface",serif;background:#fff;color:#000;transform:rotate(3deg)}
+.f3{font-family:"Permanent Marker",cursive;background:var(--pink);color:#000;transform:rotate(-2deg)}
+.f4{font-family:"Special Elite",monospace;background:var(--yellow);color:#000;transform:rotate(5deg)}
+.f5{font-family:"VT323",monospace;background:#000;color:var(--cyan);transform:rotate(-6deg)}
+.f6{font-family:"Anton",sans-serif;background:#fff;color:var(--pink);transform:rotate(2deg)}
+.sub{position:absolute;left:58px;bottom:56px;font-family:"Permanent Marker",cursive;font-size:40px;line-height:1.25;margin:0}
+.sub span{display:block}
+.sub mark{display:inline-block;margin-top:.15em;background:var(--yellow);color:#000;padding:0 .15em}
+</style>
+</head>
+<body>
+<div class="bbs"><span>CONNECT 28800 // HAILAHUMAN</span><span>driver status: still here_</span></div>
+<h1 class="ransom">
+  <span class="word"><span class="l f1">H</span><span class="l f2">a</span><span class="l f3">i</span><span class="l f4">L</span></span>
+  <span class="word"><span class="l f5">A</span></span>
+  <span class="word"><span class="l f6">h</span><span class="l f4">U</span><span class="l f1">m</span><span class="l f3">A</span><span class="l f2">n</span></span>
+</h1>
+<p class="sub"><span>There's nobody in the driver's seat.</span><mark>That used to be someone's job.</mark></p>
+</body>
+</html>
