@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Source for the favicon set. Always rendered at 512px, then downscaled. ?small=1 gives the flat variant used for 16/32px. Re-render with: ./design/render.sh -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=block" rel="stylesheet">
+<style>
+:root{--pink:#ff2e88;--yellow:#f4ff3a;--s:512px}
+html,body{margin:0;width:var(--s);height:var(--s);overflow:hidden;background:var(--pink)}
+.tile{position:absolute;inset:12%;background:#000;color:var(--yellow);
+  font-family:"Anton",Impact,sans-serif;font-size:calc(var(--s)*.62);line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transform:rotate(-6deg);box-shadow:calc(var(--s)*.03) calc(var(--s)*.03) 0 #000;
+  border:calc(var(--s)*.012) solid #000}
+.tile span{transform:translateY(-.02em)}
+/* small sizes: no tilt or shadow so the H stays crisp */
+.small .tile{inset:0;transform:none;box-shadow:none;border:0;font-size:calc(var(--s)*.86)}
+.small{background:#000}
+</style>
+<script>
+if (new URLSearchParams(location.search).get('small')) document.documentElement.classList.add('small');
+</script>
+</head>
+<body><div class="tile"><span>H</span></div></body>
+</html>
