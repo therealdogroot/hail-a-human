@@ -16,3 +16,4 @@ Thumbs.db
 
 # Tooling scratch
 node_modules/
+.claude/

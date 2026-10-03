@@ -58,7 +58,7 @@
   --note:#2a2a2a; --tape:rgba(255,46,136,.45); --grain-opacity:.08;
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--paper);color:var(--ink);
@@ -73,13 +73,13 @@ body::before{
 main,header,footer{position:relative;z-index:1}
 a{color:inherit}
 :focus-visible{outline:3px dashed var(--pink);outline-offset:3px}
-.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+.wrap{max-width:62rem;margin:0 auto;padding:0 max(1.25rem,env(safe-area-inset-right,0px)) 0 max(1.25rem,env(safe-area-inset-left,0px))}
 .measure{max-width:38rem}
 
 /* ---------- top bar ---------- */
 .bbs{
   font-family:"VT323",monospace;font-size:1.25rem;line-height:1.2;
-  background:#000;color:var(--yellow);padding:.5rem 1.25rem;
+  background:#000;color:var(--yellow);padding:.5rem max(1.25rem,env(safe-area-inset-right,0px)) .5rem max(1.25rem,env(safe-area-inset-left,0px));
   display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
 }
 .bbs span:last-child{color:var(--cyan)}
@@ -87,7 +87,7 @@ a{color:inherit}
 @keyframes blink{50%{opacity:0}}
 
 /* ---------- hero ---------- */
-.hero{padding:3.5rem 0 3rem}
+.hero{padding-top:3.5rem;padding-bottom:3rem}
 .ransom{
   margin:0;display:flex;flex-wrap:wrap;gap:.35rem .25rem;align-items:flex-end;
   font-size:clamp(3rem,13vw,8.5rem);line-height:1;
@@ -119,11 +119,17 @@ a{color:inherit}
 .hero-sub span{display:block}
 .hero-sub mark{display:inline-block;margin-top:.2em}
 .hero-sub mark{background:var(--yellow);color:#000;padding:0 .15em}
+@media (max-width:640px){
+  /* let the highlight hug each line when it wraps instead of filling a box */
+  .hero-sub span{margin-bottom:.2em}
+  .hero-sub mark{display:inline;margin-top:0;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+}
 .hero p.lead{margin:0 0 2rem}
 .btn{
   display:inline-block;font-family:"Special Elite",monospace;font-size:1.1rem;
   background:#000;color:var(--yellow);border:2px solid #000;
   padding:.8rem 1.2rem;text-decoration:none;cursor:pointer;
+  -webkit-appearance:none;appearance:none;border-radius:0;
   box-shadow:5px 5px 0 var(--pink);
   transition:transform .08s,box-shadow .08s;
 }
@@ -202,7 +208,7 @@ h3{font-family:"Special Elite",monospace;font-weight:400;font-size:1.3rem;line-h
 
 /* ---------- share ---------- */
 .share{text-align:left}
-.toast{font-family:"VT323",monospace;font-size:1.3rem;color:var(--pink);margin-left:1rem}
+.toast{font-family:"VT323",monospace;font-size:1.3rem;color:var(--pink);margin-left:1rem;overflow-wrap:anywhere}
 
 /* ---------- footer ---------- */
 footer{border-top:3px dashed var(--ink);padding:2.5rem 0 3rem;font-size:.9rem;color:var(--ink-soft)}
